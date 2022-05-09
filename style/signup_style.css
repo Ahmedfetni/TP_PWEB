@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Mitr:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+    --primary: #365bc0;
+    --secondary: #bfe2ff;
+    --background: #d8eef7;
+    --grey: #9b9eac;
+    --light: #fff;
+    --dark:#0a0a0a;
+    --main-font:'Mitr', sans-serif;
+    --secondary-font: 'Barlow', sans-serif;
+    --sidePadding: 12%;
+}
+*{
+   /* box-sizing: border-box;*/
+    font-family: var(--secondary-font);
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    background-image: url("../images/IconOfHouses.jpg");
+    background-attachment: fixed;
+    /*background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-color: var(--background);
+    color: var(--grey);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.main-nav{
+    background-color: var(--secondary);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 ;
+    width: 100%;
+    top:0;
+    left:0;
+    position: absolute;
+    z-index: 300;
+}
+.main-nav.fixed{
+    position: fixed;
+    background-color: var(--dark);
+}
+.nav-logo{
+    height: 5em;
+    width: 6em;
+    display: flex;
+    border-radius: 4em;
+}
+.main-nav-elements{
+    display: flex;
+    margin: 0 0 0 auto;
+}
+.main-nav-element, .hover-element{
+    list-style: none;
+    text-transform: uppercase;
+    margin: auto 1em;
+    font-weight: 700;
+}
+.main-nav-element > a{
+    color: var(--dark);
+    text-decoration: none;
+    padding: 1em 0;
+}
+.main-nav-element:first-child > a{
+    color: var(--primary);
+}
+.main-nav-element:hover > a, .hover-element:hover > a {
+    color:var(--primary);
+}
+.button,.button.secondary:hover{
+    background-color: var(--primary);
+    color:var(--dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.8em 1.8em;
+    font-size: 1em;
+    margin: auto 0;
+    border: 1px solid var(--primary);
+    transition: background 300ms ease-in,color 300ms ease-in;
+}
+.button:hover,.button.secondary{
+    background-color: transparent;
+    color: var(--primary);
+}
+
+/*Le Styling du conatainer de l'inscription */
+.sign-up-container{
+
+    border: solid;
+    border-color: #0a0a0a;
+    border-radius: 12px;
+    background-color: var(--secondary);
+    
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    
+
+    margin-top: 8em;
+    margin-left: 18em;
+    margin-right: 18em;
+    /*justify-content: space-between;*/
+}
+.sign-up-container h1,p{
+    color:var(--dark);
+    
+}
+
+.modal-content{
+    flex-basis:fill;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.modal-content label{
+    color: #0a0a0a;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.text-field{
+    flex-basis: 2em;
+}
