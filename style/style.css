@@ -35,12 +35,13 @@ body{
 .main-nav{
     background-color: var(--secondary);
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding: 0 ;
     width: 100%;
     top:0;
     left:0;
     position: absolute;
+    flex-grow: 1;
     z-index: 300;
 }
 .main-nav.fixed{
@@ -90,7 +91,9 @@ body{
     color: var(--primary);
 }
 /*Le styling du header*/
-
+header{
+    flex-grow: 2;
+}
 /*La barre de recherche */
 .searchbar-container{
    
@@ -195,7 +198,8 @@ body{
 }
 /*Le styling du footer*/
 footer{
- 
+    flex-wrap: nowrap;
+    flex-grow: 1;
     color: var(--primary);
     background-color: var(--secondary);
     padding: 4%;
