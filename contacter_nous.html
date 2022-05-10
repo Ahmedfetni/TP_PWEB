@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <title>Find A House dz</title>
     
-        <link rel="stylesheet" href="style/contacter_style.css">
+        <link rel="stylesheet" href="style/contacter_style.css" />
         <link rel="shortcut icon" href="./images/logo.png" />
     </head>
-    <div>
-        <!--La barre de navigation-->
+    <body>
         <nav class="main-nav">
             <a class="nav-logo" href="index.html">
                 <img src="images/logo_transparent.png" alt="" class="main-nav-image" />
@@ -16,14 +15,14 @@
                 <li class="main-nav-element">
                     <a href="index.html">Accueil</a>
                 </li>
-     
+                <!-- comment 2! delete -->
                 <li class="main-nav-element"><a href="#About">à Propos</a></li>
                 <li class="main-nav-element"><a href="contacter_nous.html">Contacter nous</a></li>
                 <button class="button"><a href = "signup.php">Creer un Compte</a></button>
             </ul>
         </nav>
-        <header>
-            <div class="main-section">
+        <section id="inscription">
+                <div class="main-section">
                 <!--Le Logo -->
                 <img src="images/logo.png" class="round-logo alt="">
                 <h2>Feedback</h2>
@@ -40,13 +39,12 @@
                     <label for="body" class="form-label"><b> votre Feedback/Message</b></label>
                     <textarea class="body-message" id="body" name="body" placeholder="Message/Feedback"></textarea>
                     
-    
+        
                     <input type="submit" name="submit" value="Envoyer" class="btn btn-dark w-100">
                     
                     </form>
-              
-            </div>   
-        </header>
+                </div> 
+        </section>
         <footer>
             <div class="flex-container">
                 <div class="footer-about">
@@ -80,5 +78,8 @@
                 Copyright &copy; 2019 All rights reserved | This template is made with <span class="fa fa-heart"></span> by <a href="https://colorlib.com">Colorlib</a>
             </small>
         </footer>
+        <!--La Partie JS-->
+   
+        <script src="https://kit.fontawesome.com/40440840ce.js" crossorigin="anonymous"></script>
     </body>
 </html>

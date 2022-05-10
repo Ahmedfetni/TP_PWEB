@@ -2,7 +2,7 @@
 
 :root{
     --primary: #365bc0;
-    --secondary: #bfe2ff;
+    --secondary:#bfe2ff;
     --background: #d8eef7;
     --grey: #9b9eac;
     --light: #fff;
@@ -28,21 +28,22 @@ body{
     background-color: var(--background);
     color: var(--grey);
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 5%;
 }
 .main-nav{
     background-color: var(--secondary);
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding: 0 ;
     width: 100%;
     top:0;
     left:0;
     position: absolute;
+    flex-grow: 1;
     z-index: 300;
+    margin-bottom: 5%;
 }
 .main-nav.fixed{
     position: fixed;
@@ -90,15 +91,17 @@ body{
     background-color: transparent;
     color: var(--primary);
 }
-/*Information du contact */
-header{
 
-    
+/*Le styling du section */
+#inscription{
+    margin-top: 10%;
+    margin-bottom: 5%;
 }
-/*La partie contact */
 .main-section{
+    background-color: var(--secondary);
+    padding: 2%;
     position: relative;
-    margin-left: 20%;
+    margin-left: 25%;
     margin-right: 30%;
     display: flex;
     flex-direction: column;
@@ -138,17 +141,21 @@ header{
     padding-bottom: 5%;
 }
 .ident{
+    width: 200px;
+    height: 30px;
     border-radius: 4%;
 }
 .body-message{
     flex-basis: 100%;
-    width: 60%;
+    width: 600px;
     border-radius: 4%;
     margin-bottom: 1em;
 }
 
+/*Le styling du footer*/
 footer{
-    flex-grow: none;
+    flex-wrap: nowrap;
+    flex-grow: 1;
     color: var(--primary);
     background-color: var(--secondary);
     padding: 4%;
@@ -173,3 +180,4 @@ footer ul{
     justify-content: space-between;
     padding: 5px;
 }
+
