@@ -30,7 +30,6 @@ body{
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding-bottom: 30px;
 }
 .main-nav{
     background-color: var(--secondary);
@@ -93,11 +92,11 @@ body{
 /*Le Styling du conatainer de l'inscription */
 .sign-up-container{
 
-    border: solid;
+    border: solid 1px;
     border-color: #0a0a0a;
     border-radius: 12px;
     background-color: var(--secondary);
-    
+    padding-bottom: 2%;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -107,12 +106,32 @@ body{
     margin-top: 8em;
     margin-left: 18em;
     margin-right: 18em;
-    padding-bottom: 30px;
+    margin-bottom:6em;
     /*justify-content: space-between;*/
 }
 .sign-up-container h1,p{
     color:var(--dark);
     
+}
+.clearfix{
+    margin-left: 55%;
+
+}
+.clearfix:nth-child(1){
+    margin-left: 10px;
+}
+.sign-up-container button{
+ 
+    width: 80px;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--primary);
+}
+.sign-up-container button:hover{
+    background-color: var(--secondary);
+    border: solid 1px;
 }
 
 .modal-content{
@@ -131,4 +150,34 @@ body{
 
 .text-field{
     flex-basis: 2em;
+    border-radius: 7px;
+}
+
+/*Le styling du footer*/
+footer{
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    color: var(--primary);
+    background-color: var(--secondary);
+    padding: 4%;
+}
+footer ul{
+   list-style: none ; 
+}
+
+.flex-container{
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-about{
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.footer-suiver ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
 }

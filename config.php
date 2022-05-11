@@ -2,9 +2,9 @@
 function OpenCon()
 {
 $server = "localhost";
-$user = "root";
-$pass = "";
-$database = "login_register_pure_coding";
+$user = "admin_pw";
+$pass = "8PVmzNKPh9RQtKG";
+$database = "TP_pweb";
 
 $conn = mysqli_connect($server, $user, $pass, $database);
 
