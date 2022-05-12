@@ -192,10 +192,11 @@ footer ul{
 }
 .erreur.afficher-erreur{
     display: block;
+    margin-bottom: 5px;
     margin-bottom: 10px;
     transform:translateY(-20px);
 }
 .text-field-erreur{
     color:red;
-    border: 1px solid red;
+    border: 2px solid red;
 }

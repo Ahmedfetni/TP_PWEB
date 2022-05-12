@@ -15,7 +15,7 @@ if (isset($_SESSION['username'])) {
     header("Location: index.html");
 }
 
-
+$server_side_form_erreur = "";
 
 if (isset($_POST['submit'])) {
 	$username = $_POST['username'];
@@ -38,18 +38,16 @@ if (isset($_POST['submit'])) {
 				$_POST['password'] = "";
 				$_POST['cpassword'] = "";
 			} else {
-				echo "<script>alert('Un erreur pendant la creeation de votre compte')</script>";
+				$server_side_form_erreur ="Un erreur penedant la creeation de votre compte";
 			}
 		} else {
-			echo "<script>alert('Cette email deja exist')</script>";
+			$server_side_form_erreur="Cette adresse email deja exist";
+         
 		}
 		
 	} else {
-		echo "<script>
-            alert('mot de passe n'est pas le meme ')
-            
-            
-        </script>";
+		$server_side_form_erreur = "Mot de passe n'est pas le meme";
+
 	}
 }
 
@@ -84,29 +82,41 @@ if (isset($_POST['submit'])) {
     <!-- The Modal (contains the Sign Up form) -->
     <section id="inscrire">
         <div class="sign-up-container">
+            <?php
+            if(!empty($server_side_form_erreur)) 
+                echo
+                    "<p class=\"erreur afficher-erreur\">".$server_side_form_erreur."</p>";
+            ?>
             <h1>S'inscrire</h1>
+            
             <p>Introduire vos information pour cree un compte</p> 
+            
             <form class="modal-content" method="POST" action="" id="inscription">
-                <label for="email"><b>Nom et Prénom</b></label>
-                <input class='text-field' type="text" placeholder="Nom et prénom" name="username" value="<?php echo $username; ?>" >
+                <label for="email"><b>Nom d'utilisateur </b></label>
+                <input class='text-field nom-text-input' type="text" placeholder="Nom d'utilisateur" name="username" value="<?php echo $username; ?>" >
                 
+                <p class="nom-erreur erreur"></p>
+
                 <label for="email"><b>Adresse Email</b></label>
                 <input class='text-field email-text-input' type="email" placeholder="Votre Email" name="email" value="<?php echo $email; ?>" >
 
                 <p class="email-erreur erreur"></p>
                 
                 <label for="password"><b>Mot de Passe</b></label>
-                <input class='text-field' type="password" placeholder="votre mot de passe" name="password" value="<?php echo $_POST['password']; ?>" >
+                <input class='text-field password-text-input' type="password" placeholder="votre mot de passe" name="password" value="<?php echo $_POST['password']; ?>" >
+
+                <p class="password-erreur erreur"></p>
 
                 <label for="cpassword"><b>Repetter le  Mot de Passe</b></label>
-                <input class='text-field' type="password" placeholder="Repetter le mot de passe" name="cpassword" value="<?php echo $_POST['cpassword']; ?>" >
+                <input class='text-field cpassword-text-input' type="password" placeholder="Repetter le mot de passe" name="cpassword" value="<?php echo $_POST['cpassword']; ?>" >
                 
+                <p class="cpassword-erreur erreur"></p>
 
                 <p>Si vous Inscrivez sur ce site vous accpter le conditions <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
                 <div class="clearfix">
                     <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Annuler</button>
-                    <button id="submitInscritption"type="submit" name="submit" class="signup">Inscrire</button>
+                    <button id="submitInscritption"type="submit" name="submit" class="signup">S'nscrire</button>
                 </div>
             </form>
         </div>
