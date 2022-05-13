@@ -2,7 +2,7 @@
 
 :root{
     --primary: #365bc0;
-    --secondary:#bfe2ff;
+    --secondary: #bfe2ff;
     --background: #d8eef7;
     --grey: #9b9eac;
     --light: #fff;
@@ -28,22 +28,19 @@ body{
     background-color: var(--background);
     color: var(--grey);
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
 }
 .main-nav{
     background-color: var(--secondary);
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     padding: 0 ;
     width: 100%;
     top:0;
     left:0;
     position: absolute;
-    flex-grow: 1;
     z-index: 300;
-    margin-bottom: 5%;
 }
 .main-nav.fixed{
     position: fixed;
@@ -92,61 +89,37 @@ body{
     color: var(--primary);
 }
 
-/*Le styling du section */
-#contacter-nous{
-    margin-top: 10%;
-    margin-bottom: 5%;
-}
-.main-section{
+/*Le Styling du conatainer de l'inscription */
+.sign-in-container{
+
+    border: solid 1px;
+    border-color: #0a0a0a;
+    border-radius: 12px;
     background-color: var(--secondary);
-    padding: 2%;
-    position: relative;
-    margin-left: 25%;
-    margin-right: 30%;
+    padding-bottom: 2%;
+    align-items: center;
+    justify-content: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
 
-
+    margin-top: 8em;
+    margin-left: 28em;
+    margin-right: 28em;
+    margin-bottom:6em;
+    min-width: 460px;
+    /*justify-content: space-between;*/
 }
-.main-section h2{
-    color: #0a0a0a;
-}
-.round-logo{
-    border-radius: 50%;
-    height: 5em;
-    width: 5em;
-    display: flex;
-
-}
-.contact-form{
-    flex-basis: 100%;
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-.contact-form label{
-    color: #0a0a0a;
-    margin-top: 1em;
-    margin-bottom: 1em;
+.sign-in-container h1,p{
+    color:var(--dark);
+    
 }
 
-.ident{
-    width: 200px;
-    height: 30px;
-    border-radius: 4%;
+.clearfix:nth-child(1){
+    margin-left: 10px;
 }
-.body-message{
-    flex-basis: 100%;
-    width: 400px;
-    border-radius: 4%;
-    margin-bottom: 1em;
-}
-#the-form-submit{
+.sign-in-container button{
+ 
     width: 80px;
     height: 40px;
     border-radius: 4px;
@@ -154,11 +127,34 @@ body{
     border: none;
     background-color: var(--primary);
 }
-
-#the-form-submit:hover{
+.sign-in-container button:hover{
     background-color: var(--secondary);
-    border: solid 1px var(--primary);
+    border: solid 1px;
 }
+
+.modal-content{
+    flex-basis:fill;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.modal-content label{
+    color: #0a0a0a;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.text-field{
+    flex-basis: 2em;
+    border-radius: 7px;
+}
+
+.password-text-input{
+    margin-bottom: 20px;
+}
+
 
 /*Le styling du footer*/
 footer{

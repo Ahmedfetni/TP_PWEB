@@ -19,9 +19,10 @@
                 <li class="main-nav-element"><a href="#About">à Propos</a></li>
                 <li class="main-nav-element"><a href="contacter_nous.html">Contacter nous</a></li>
                 <button class="button"><a href = "signup.php">Creer un Compte</a></button>
+                <button class="button" id="connexion" onclick="location.href='connexion.html'" >Connexion</button>
             </ul>
         </nav>
-        <section id="inscription">
+        <section id="contacter-nous">
                 <div class="main-section">
                 <!--Le Logo -->
                 <img src="images/logo.png" class="round-logo alt="">
@@ -29,20 +30,27 @@
                 <!--La forum de contact -->
                 
                     <form method="POST" class="contact-form">
-                    <label for="name" class="form-label"><b>Nom</b></label>
-                    <input type="text" class="ident" id="name" name="name" placeholder="votre name">
-                    
-                    <label for="email" class="form-label"><b>Email</b></label>
-                    <input type="email" class="ident" id="email" name="email" placeholder="Enter your email" value="Adresse Email">
-                    
-                    
-                    <label for="body" class="form-label"><b> votre Feedback/Message</b></label>
-                    <textarea class="body-message" id="body" name="body" placeholder="Message/Feedback"></textarea>
-                    
-        
-                    <input type="submit" name="submit" value="Envoyer" class="btn btn-dark w-100">
+
+                        <label for="name" class="form-label" name="name"><b>Nom</b></label>
+                        <input type="text" class="ident nom-text-input" id="name" name="name" placeholder="votre nom">
+                        
+                        <p class="nom-erreur erreur"></p>
+
+                        <label for="email" class="form-label"><b>Email</b></label>
+                        <input type="email" class="ident email-text-input" id="email" name="email" placeholder="Votre email">
+                        
+                        <p class="email-erreur erreur"></p>
+                        
+                        <label for="body" nmae="body" class="form-label"><b> votre Message</b></label>
+                        <textarea class="body-message" id="body" name="body" placeholder="Message/Feedback"></textarea>
+                        
+                        <p class="email-erreur erreur"></p>
+
+                        <button id="the-form-submit" type="submit" name="submit" >Envoyer</button>
                     
                     </form>
+
+                    
                 </div> 
         </section>
         <footer>
@@ -79,7 +87,7 @@
             </small>
         </footer>
         <!--La Partie JS-->
-   
+        <script src="js/contacter_nous.js"></script>
         <script src="https://kit.fontawesome.com/40440840ce.js" crossorigin="anonymous"></script>
     </body>
 </html>
