@@ -73,7 +73,7 @@ if (isset($_POST['submit'])) {
                 </li>
      
                 <li class="main-nav-element"><a href="#About">à Propos</a></li>
-                <li class="main-nav-element"><a href="contacter_nous.html">Contacter nous</a></li>
+                <li class="main-nav-element"><a href="contacter_nous.php">Contacter nous</a></li>
                 <button class="button" id="connexion" onclick="location.href='connexion.html'" >Connexion</button>
             </ul>
         </nav>

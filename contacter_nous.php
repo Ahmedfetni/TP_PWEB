@@ -1,3 +1,39 @@
+<?php 
+
+    include 'config.php';
+    
+    //error_reporting(0);
+    
+    session_start();
+    try{
+        $conn = OpenCon();
+    
+    }catch(Exception $e){
+        echo 'Message : '.$e->getMessage();
+    }
+    if (isset($_SESSION['username'])) {
+        header("Location: index.html");
+    }
+    if (isset($_POST['submit'])) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $body = $_POST['body'];
+        $sql = "INSERT INTO feedbacks (name, email, body)
+                        VALUES ('$name', '$email', '$body')";
+        $result = mysqli_query($conn, $sql);
+        if($result){
+            echo "<script>
+                alert('votre Feedback /Message  a été enregistré');
+            </script>";
+        }else{
+            echo "<script>
+                alert('votre Feedback / Message non enregistré a cause d'une erreur');
+            </script>";
+        }
+
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -18,7 +54,7 @@
                 <!-- comment 2! delete -->
                 <li class="main-nav-element"><a href="#About">à Propos</a></li>
                 <li class="main-nav-element"><a href="contacter_nous.html">Contacter nous</a></li>
-                <button class="button"><a href = "signup.php">Creer un Compte</a></button>
+                <button class="button" onclick="location.href='inscrire.php'">Creer un Compte</button>
                 <button class="button" id="connexion" onclick="location.href='connexion.html'" >Connexion</button>
             </ul>
         </nav>

@@ -98,6 +98,8 @@ body{
     margin-bottom: 5%;
 }
 .main-section{
+    border: solid 1px var(--primary);
+    border-radius: 14px;
     background-color: var(--secondary);
     padding: 2%;
     position: relative;
@@ -114,6 +116,7 @@ body{
     color: #0a0a0a;
 }
 .round-logo{
+    border: solid 1px var(--primary);
     border-radius: 50%;
     height: 5em;
     width: 5em;
