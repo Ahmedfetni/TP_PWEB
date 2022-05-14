@@ -3,7 +3,7 @@
     include 'config.php';
     
     //error_reporting(0);
-    
+
     session_start();
     try{
         $conn = OpenCon();
@@ -15,20 +15,24 @@
         header("Location: index.html");
     }
     if (isset($_POST['submit'])) {
+
         $name = $_POST['name'];
         $email = $_POST['email'];
         $body = $_POST['body'];
+
         $sql = "INSERT INTO feedbacks (name, email, body)
                         VALUES ('$name', '$email', '$body')";
+     
         $result = mysqli_query($conn, $sql);
+
         if($result){
-            echo "<script>
-                alert('votre Feedback /Message  a été enregistré');
-            </script>";
+            $erreur_serverur = false ; //pas d'erreur 
+            $_POST['name']="";
+            $_POST['email']="";
+            $_POST['body']="";
+
         }else{
-            echo "<script>
-                alert('votre Feedback / Message non enregistré a cause d'une erreur');
-            </script>";
+         $erreur_serverur = true;
         }
 
     }
@@ -60,12 +64,23 @@
         </nav>
         <section id="contacter-nous">
                 <div class="main-section">
+
+                <!--Message  a afficher-->
+                <?php
+                if(isset($erreur_serverur) && !$erreur_serverur){
+                    echo "<p class=\"succes\">Votre message est bien enregistrer</p>";
+                }else if(isset($erreur_serverur)){
+                    echo "<p class =\"erreur afficher-erreur\">votre Feedback / Message non enregistré a cause d'une erreur</p>";
+                }
+                
+                ?>
+
                 <!--Le Logo -->
-                <img src="images/logo.png" class="round-logo alt="">
+                <img src="images/logo.png" class="round-logo" alt="">
                 <h2>Feedback</h2>
                 <!--La forum de contact -->
                 
-                    <form method="POST" class="contact-form">
+                    <form method="POST" class="contact-form" id="contact" action="">
 
                         <label for="name" class="form-label" name="name"><b>Nom</b></label>
                         <input type="text" class="ident nom-text-input" id="name" name="name" placeholder="votre nom">
@@ -77,10 +92,10 @@
                         
                         <p class="email-erreur erreur"></p>
                         
-                        <label for="body" nmae="body" class="form-label"><b> votre Message</b></label>
+                        <label for="body" name="body" id="body" class="form-label"><b> votre Message</b></label>
                         <textarea class="body-message" id="body" name="body" placeholder="Message/Feedback"></textarea>
                         
-                        <p class="email-erreur erreur"></p>
+                        <p class="body-erreur erreur"></p>
 
                         <button id="the-form-submit" type="submit" name="submit" >Envoyer</button>
                     

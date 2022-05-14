@@ -79,6 +79,7 @@ body{
 .button,.button.secondary:hover{
     background-color: var(--primary);
     color:var(--dark);
+    border-radius: 7px; 
     font-weight: 700;
     text-transform: uppercase;
     padding: 0.8em 1.8em;
@@ -209,4 +210,15 @@ footer ul{
 .text-field-erreur{
     color:red;
     border: 2px solid red;
+}
+/*Message serveur*/
+.succes{
+    color :#36670b;
+    background-color: #7bf291;
+    padding: 5px;
+    border-radius: 7px;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transform: translateY(-20px);
 }

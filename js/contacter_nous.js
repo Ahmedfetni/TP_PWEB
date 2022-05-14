@@ -13,7 +13,7 @@ function effacerErreur(){
     }
 }
 //L'ajout d'un fonction qui verfier les champs de text avent la requet POST
-let form  = document.forms['contact-form'];
+let form  = document.forms['contact'];
 form.onsubmit = function (event){
     effacerErreur();
     //validation de l'email
@@ -31,9 +31,10 @@ form.onsubmit = function (event){
         return false;
     }
       //validation du nom d'utilisateure
-      if(form.body.value == ""){
+      let body =  document.getElementById("body");
+      if(body.value == ""){
         afficherErreur("body-erreur", "vous deveze introduire un nom d'utilisateur");
-        document.querySelector(".body-message").classList.add(".text-field-erreur");
+        body.classList.add(".text-field-erreur");
         event.preventDefault();
         return false;
     }

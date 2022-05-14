@@ -116,7 +116,7 @@ if (isset($_POST['submit'])) {
 
                 <div class="clearfix">
                     <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Annuler</button>
-                    <button id="submitInscritption"type="submit" name="submit" class="signup">S'nscrire</button>
+                    <button id="submitInscritption" type="submit" name="submit" class="signup">S'nscrire</button>
                 </div>
             </form>
         </div>

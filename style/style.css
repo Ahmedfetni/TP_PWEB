@@ -78,6 +78,7 @@ body{
 .button,.button.secondary:hover{
     background-color: var(--primary);
     color:var(--dark);
+    border-radius: 7px;
     font-weight: 700;
     text-transform: uppercase;
     padding: 0.8em 1.8em;
