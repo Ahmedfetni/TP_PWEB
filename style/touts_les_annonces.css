@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&family=Mitr:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+    --primary: #365bc0;
+    --secondary:#bfe2ff;
+    --background: #d8eef7;
+    --grey: #9b9eac;
+    --light: #fff;
+    --dark:#0a0a0a;
+    --main-font:'Mitr', sans-serif;
+    --secondary-font: 'Barlow', sans-serif;
+    --sidePadding: 12%;
+}
+*{
+   /* box-sizing: border-box;*/
+    font-family: var(--secondary-font);
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    background-image: url("../images/IconOfHouses.jpg");
+    background-attachment: fixed;
+    /*background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-color: var(--background);
+    color: var(--grey);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.main-nav{
+    background-color: var(--secondary);
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0 ;
+    width: 100%;
+    top:0;
+    left:0;
+    position: absolute;
+    flex-grow: 1;
+    z-index: 300;
+}
+.main-nav.fixed{
+    position: fixed;
+    background-color: var(--dark);
+}
+.nav-logo{
+    height: 5em;
+    width: 6em;
+    display: flex;
+    border-radius: 4em;
+}
+.main-nav-elements{
+    display: flex;
+    margin: 0 0 0 auto;
+}
+.main-nav-element, .hover-element{
+    list-style: none;
+    text-transform: uppercase;
+    margin: auto 1em;
+    font-weight: 700;
+}
+.main-nav-element > a{
+    color: var(--dark);
+    text-decoration: none;
+    padding: 1em 0;
+}
+.main-nav-element:first-child > a{
+    color: var(--primary);
+}
+.main-nav-element:hover > a, .hover-element:hover > a {
+    color:var(--primary);
+}
+.button,.button.secondary:hover{
+    background-color: var(--primary);
+    color:var(--dark);
+    border-radius: 7px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.8em 1.8em;
+    font-size: 1em;
+    margin: auto 0;
+    border: 1px solid var(--primary);
+    transition: background 300ms ease-in,color 300ms ease-in;
+}
+.button:hover,.button.secondary{
+    background-color: transparent;
+    color: var(--primary);
+}
+/*Le styling du header*/
+section{
+    margin-top: 200px;
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.annonce{
+    border:solid 1px #0a0a0a;
+    width: 400px;
+    height: 10%;
+    margin: 10px;
+}
+
+/*Le styling du footer*/
+footer{
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    color: var(--primary);
+    background-color: var(--secondary);
+    padding: 4%;
+}
+footer ul{
+   list-style: none ; 
+}
+
+.flex-container{
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-about{
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.footer-suiver ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}

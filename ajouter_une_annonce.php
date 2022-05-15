@@ -37,7 +37,7 @@
         }
     }else{
         header("Location: index.php");
-        echo "<script> alert('LoginFirst'):</script>";
+        
     }    
 ?>
 <!DOCTYPE html>
@@ -49,22 +49,8 @@
         <link rel="shortcut icon" href="./images/logo.png" />
     </head>
     <body>
-    <nav class="main-nav">
-            <a class="nav-logo" href="index.html">
-                <img src="images/logo_transparent.png" alt="" class="main-nav-image" />
-            </a>
-            <ul class="main-nav-elements">
-                <li class="main-nav-element">
-                    <a href="index.html">Accueil</a>
-                </li>
-                
-                <li class="main-nav-element"><a href="Tous_les_annonces.php">Tous les Annonces</a></li>
-                <li class="main-nav-element"><a href="mes_annonces.php">Mais Annonces</a></li>
-                <li class="main-nav-element"><a href="contacter_nous.php">Contacter nous</a></li>
-                <li class="main-nav-element"><a href="#About">à Propos</a></li>
-                <button class="button" id="connexion" onclick="location.href='ajouter_une_annonce.php'" >Deconexion</button>
-            </ul>
-        </nav>
+    <!-- La barre de navigation pour un utilsateur -->
+    <?php include_once('nav_bar_user.php');?>
         <section id="inscrire">
             <div class="ajout-container">
                 <!--<?php
@@ -125,38 +111,9 @@
                 </form>
             </div>
         <section>
-            <footer>
-            <div class="flex-container">
-                <div class="footer-about" id="a-propos">
-                    <h2>About Stated</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
-                </div>
-    
-                <div class="footer-quick-links">
-                    <h2>Quick Links</h2>
-                    <ul>
-                        <li><a href="#">A propos de nous</a></li>
-                        <li><a href="#">Offres</a></li>
-                        <li><a href="#">Contacter nous</a></li>
-                    </ul>
-                </div>
-    
-                <div class="footer-suiver">
-                    
-                    <h2>Follow Us</h2>
-                    <ul>
-                        <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
-                        <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
-                    </ul>
-                </div>
-            </div>
-    
-            <small>
-                Copyright &copy; 2019 All rights reserved | This template is made with <span class="fa fa-heart"></span> by <a href="https://colorlib.com">Colorlib</a>
-            </small>
-        </footer>
+            <!-- Le footer du page  -->
+         <?php include_once('footer.php');?>
+         
         <script src="js/ajouter_une_annonce.js"></script>
         <script src="https://kit.fontawesome.com/40440840ce.js" crossorigin="anonymous"></script>   
     </body>
