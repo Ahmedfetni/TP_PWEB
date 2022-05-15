@@ -1,4 +1,45 @@
-<!DOCTYPE html>
+<?php
+    include "config.php";
+
+    try{
+        $conn = OpenCon();
+    
+    }catch(Exception $e){
+        echo 'Message : '.$e->getMessage();
+    }
+    if (isset($_SESSION['username'])) {
+        header("Location: index.html");
+    }
+    
+    if(isset($_POST['submit'])){
+        $email_par_utilisateur = $_POST["email"];
+        $mot_de_passe_par_utilisateur= md5($_POST['password']);
+        $sql = "SELECT id, username, password FROM users WHERE email = '$email_par_utilisateur'";
+        $result = mysqli_query($conn, $sql);
+        if($result->num_rows == 1){
+            $data = mysqli_fetch_assoc($result);
+            if($data['password'] == $mot_de_passe_par_utilisateur){
+                $id = $data['id'];
+                $username = $data['username'];
+
+                session_start();
+                            
+                //sayvgarder les infotmations de l'utilisateurs
+                $_SESSION["loggedin"] = true;
+                $_SESSION["id"] = $id;
+                $_SESSION["username"] = $username;
+                $_SESSION['email']= $email_par_utilisateur; 
+
+                header("Location: welcome.php");
+            } 
+        
+        }else{    
+            echo "<script>alert('the user email exist');</script>";
+        }    
+    }
+
+?>
+
 <html lang="fr">
     <head>
         <title>Find A House dz</title>
@@ -35,7 +76,7 @@
             
             <form class="modal-content" method="POST" action="" id="connexion">
 
-                <label for="email"><b>Adresse Email</b></label>
+                <label for="email"><b>Email</b></label>
                 <input class='text-field email-text-input' type="email" placeholder="Votre Email" name="email" value="<?php echo $email; ?>" >
 
                 <p class="email-erreur erreur"></p>
