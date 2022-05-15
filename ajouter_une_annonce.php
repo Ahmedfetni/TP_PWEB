@@ -1,3 +1,34 @@
+<?php
+    include 'config.php';
+
+    //error_reporting(0);
+    
+    session_start();
+    try{
+        $conn = OpenCon();
+    
+    }catch(Exception $e){
+        echo 'Message : '.$e->getMessage();
+    }
+    if (isset($_SESSION['username'])) {
+        header("Location: index.html");
+    }
+
+    if (isset($_POST['submit'])) {
+        
+        $titre = $_POST['titre'];
+        $corp = $_POST['body'];
+        $type = $_POST['type'];
+        $prix = $_POST['prix'];
+        $adresse = $_POST['adresse'];
+        $wilaya = $_POST['wilaya'];
+        $nbr_pieces = $_POST['nbrpiece'];
+        $tlp = $_POST['tlp'];
+        
+        $sql_query = "INSERT into pubs ()";
+    
+    }
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
