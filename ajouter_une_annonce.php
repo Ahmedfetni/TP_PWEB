@@ -10,24 +10,35 @@
     }catch(Exception $e){
         echo 'Message : '.$e->getMessage();
     }
-    if (isset($_SESSION['username'])) {
-        header("Location: index.html");
-    }
-
-    if (isset($_POST['submit'])) {
+    if (isset($_SESSION['username']) && $_SESSION['loggedin'] ) {
         
-        $titre = $_POST['titre'];
-        $corp = $_POST['body'];
-        $type = $_POST['type'];
-        $prix = $_POST['prix'];
-        $adresse = $_POST['adresse'];
-        $wilaya = $_POST['wilaya'];
-        $nbr_pieces = $_POST['nbrpiece'];
-        $tlp = $_POST['tlp'];
-        
-        $sql_query = "INSERT into pubs ()";
     
-    }
+
+        if (isset($_POST['submit'])) {
+            
+            $id_utilisateur = $_SESSION['id'];
+            $titre = $_POST['titre'];
+            $corp = $_POST['body'];
+            $type = $_POST['type'];
+            $prix = $_POST['prix'];
+            $adresse = $_POST['adresse'];
+            $wilaya = $_POST['wilaya'];
+            $nbr_pieces = $_POST['nbrpiece'];
+            $tlp = $_POST['tlp'];
+            
+            $sql_query = "INSERT INTO `pubs`( `user_id`, `titre`, `corp`, `type`, `prix`, `adresse`, `wilaya`, `nbr_piece`, `numero_tlp`) VALUES ('$id_utilisateur', '$titre', '$corp','$type', '$prix', '$adresse', '$wilaya', '$nbr_pieces', '$tlp')";
+            $result = mysqli_query($conn, $sql_query);
+			if ($result) {
+            echo "<script>alert('annonce cree')</script>";
+            }else{
+                echo "<script>alert('Erreur')</script>";
+            }
+            
+        }
+    }else{
+        header("Location: index.php");
+        echo "<script> alert('LoginFirst'):</script>";
+    }    
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -38,7 +49,7 @@
         <link rel="shortcut icon" href="./images/logo.png" />
     </head>
     <body>
-        <nav class="main-nav">
+    <nav class="main-nav">
             <a class="nav-logo" href="index.html">
                 <img src="images/logo_transparent.png" alt="" class="main-nav-image" />
             </a>
@@ -46,10 +57,12 @@
                 <li class="main-nav-element">
                     <a href="index.html">Accueil</a>
                 </li>
-                <li class="main-nav-element"><a href="#About">à Propos</a></li>
+                
+                <li class="main-nav-element"><a href="Tous_les_annonces.php">Tous les Annonces</a></li>
+                <li class="main-nav-element"><a href="mes_annonces.php">Mais Annonces</a></li>
                 <li class="main-nav-element"><a href="contacter_nous.php">Contacter nous</a></li>
-                <button class="button" onclick="location.href='inscrire.php'" >Creer un Compte</button>
-                <button class="button" id="connexion" onclick="location.href='connexion.php'" >Connexion</button>
+                <li class="main-nav-element"><a href="#About">à Propos</a></li>
+                <button class="button" id="connexion" onclick="location.href='ajouter_une_annonce.php'" >Deconexion</button>
             </ul>
         </nav>
         <section id="inscrire">
@@ -87,7 +100,7 @@
                     <p class="type-erreur erreur"></p>
 
                     <label for="prix"><b>Prix</b></label>document.forms['annonce'
-                    <input class="text-field titre-text-input" type="text" name="prix" in="1"">
+                    <input class="text-field titre-text-input" type="text" name="prix" >
                     <p class="prix-erreur erreur"></p>
                     <!-- Pour l'adresse et la wilaya-->
                     <div id ="lieu" class="form-group">
@@ -99,8 +112,8 @@
                     </div>
                     <p class="lieu-erreur erreur"></p>
 
-                    <label for="nbr-peice"><b>Nombre des pieces</b></label>
-                    <input class="text-field titre-text-input" name="nbrpiece" id="nbrpiece" type="number"/>
+                    <label for="nbrpeice"><b>Nombre des pieces</b></label>
+                    <input class="text-field titre-text-input" name="nbrpiece" id="nbrpiece" type="text"/>
                     <p class="nbrpiece-erreur erreur"></p>
 
                     <label for="tlp"><b>Numero de telephone</b></label>
