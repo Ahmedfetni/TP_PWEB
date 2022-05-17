@@ -11,9 +11,6 @@
     }catch(Exception $e){
         echo 'Message : '.$e->getMessage();
     }
-    if (isset($_SESSION['username'])) {
-        header("Location: index.html");
-    }
     if (isset($_POST['submit'])) {
 
         $name = $_POST['name'];

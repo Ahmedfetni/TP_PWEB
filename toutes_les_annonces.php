@@ -1,6 +1,7 @@
 <?php
     include "config.php";
 
+    session_start();
     try{
         $conn = OpenCon();
     

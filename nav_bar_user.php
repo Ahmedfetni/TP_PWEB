@@ -8,11 +8,11 @@
                     <a href="index.html">Accueil</a>
                 </li>
                 
-                <li class="main-nav-element"><a href="Toutes_les_annonces.php">Toutes les Annonces</a></li>
+                <li class="main-nav-element"><a href="toutes_les_annonces.php">Toutes les Annonces</a></li>
                 <li class="main-nav-element"><a href="mes_annonces.php">Mes Annonces</a></li>
                 <li class="main-nav-element"><a href="contacter_nous.php">Contacter nous</a></li>
                 <li class="main-nav-element"><a href="#About">à Propos</a></li>
                 <button class="button" id="connexion" onclick="location.href='ajouter_une_annonce.php'" >Ajouter une Annonce</button>
-                <button class="button" id="connexion" onclick="location.href='ajouter_une_annonce.php'" >Deconexion</button>
+                <button class="button" id="connexion" onclick="location.href='deconnexion.php'" >Deconnexion</button>
             </ul>
         </nav>

@@ -1,12 +1,13 @@
 <?php
     include "config.php";
-
+    session_start();
     try{
         $conn = OpenCon();
     
     }catch(Exception $e){
         echo 'Message : '.$e->getMessage();
     }
+    
     if (isset($_SESSION['username'])&&  $_SESSION['loggedin']) {
         header("Location: acceuil.php");
     }
@@ -20,10 +21,7 @@
             $data = mysqli_fetch_assoc($result);
             if($data['password'] == $mot_de_passe_par_utilisateur){
                 $id = $data['id'];
-                $username = $data['username'];
-
-                session_start();
-                            
+                $username = $data['username'];            
                 //sayvgarder les infotmations de l'utilisateurs
                 $_SESSION["loggedin"] = true;
                 $_SESSION["id"] = $id;
