@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="style/toutes_les_annonces.css" />
         <link rel="shortcut icon" href="./images/logo.png" />
     </head>
-</head>
+
 <body>
     <!-- La barre de navigation  -->
     <?php 
@@ -60,6 +60,7 @@
                                 <p class=\"numero\">".$row['numero_tlp']."</p>
                                 </div>
                         </div>
+                        <a  id=\"supprimer\" href=\"supprimer_annonce.php?id=".$row['id']."\" >Supprimer</a>
                     </div>";
                 }
             else
@@ -76,6 +77,6 @@
 
     <!-- Le footer de la page -->
     <?php include_once('footer.php');?>
-    <script src="js/tous_les-annonces.js"> </script>
+   
 </body>
 </html>

@@ -18,31 +18,15 @@
         <!-- La barre de navigation pour un utilsateur -->
         <?php include_once('nav_bar_visiteur.php');?>
         <header>
-            <!--Search sections -->
-            <div class="searchbar-container">
-                <input class="searchbar" type="text" placeholder="recherche">
-                <div class="type">
-                    <button class="type-btn">Type</button>
-                    <div class="list-type">
-                        <button class="pick-type">Appartement</button>
-                        <button class="pick-type">Villa</button>
-                        <button class="pick-type">Garage</button>
-                        <button class="pick-type">Bureau</button>
-                    </div>
-                </div>
-                <div class="region">
-                    <button class="region-btn">Regions</button>
-                    <div class="list-region">
-                        <button class="pick-region">Nord</button>
-                        <button class="pick-region">Est</button>
-                        <button class="pick-region">Ouest</button>
-                        <button class="pick-region">Sud</button>
-                    </div>
-                </div>
+            <div>
+                <h1>Find A Home dz</h1>
+                <p>
+                    Ce site est un  
+                </p>
             </div>
         </header>
         <!-- Le footer du page  -->
-        <?php include_once('footer.php');?>
+
         <!--La Partie JS-->
         <script>
              /*Ajouter un la functionalite du button type*/

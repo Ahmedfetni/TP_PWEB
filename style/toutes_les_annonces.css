@@ -101,6 +101,7 @@ section{
     flex-wrap: wrap;
 }
 .annonce{
+    color: var(--primary);
     transition: height 0.3s ease-in-out;
     border:solid 1px #0a0a0a;
     background-color: #bfe2ff;
@@ -114,7 +115,14 @@ section{
     
 }
 
-
+#supprimer{
+    background-color: transparent;
+    width: 45%;
+    font-size: 1em;
+    justify-content: center;
+    flex-grow: 0;
+    margin-left: 20ù;
+}
 
 
 
