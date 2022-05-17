@@ -7,8 +7,10 @@
                 <li class="main-nav-element">
                     <a href="index.html">Accueil</a>
                 </li>
-                <li class="main-nav-element"><a href="#About">à Propos</a></li>
+                <li class="main-nav-element"><a href="Toutes_les_annonces.php">Toutes les Annonces</a></li>
+               
                 <li class="main-nav-element"><a href="contacter_nous.php">Contacter nous</a></li>
+                <li class="main-nav-element"><a href="#About">à Propos</a></li>
                 <button class="button" onclick="location.href='inscrire.php'" >Creer un Compte</button>
                 <button class="button" id="connexion" onclick="location.href='connexion.php'" >Connexion</button>
             </ul>

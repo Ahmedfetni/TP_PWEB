@@ -58,6 +58,6 @@
              });
 
         </script>
-        <script src="https://kit.fontawesome.com/40440840ce.js" crossorigin="anonymous"></script>
+        pt>
     </body>
 </html>

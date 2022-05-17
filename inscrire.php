@@ -113,6 +113,6 @@ if (isset($_POST['submit'])) {
         <!-- Le footer du page  -->
         <?php include_once('footer.php');?>
     <script src="js/inscrire.js"></script>
-    <script src="https://kit.fontawesome.com/40440840ce.js" crossorigin="anonymous"></script>   
+      
 </body>
 </html>

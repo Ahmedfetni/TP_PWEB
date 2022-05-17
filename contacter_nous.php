@@ -96,6 +96,6 @@
        <?php include_once('footer.php');?>
         <!--La Partie JS-->
         <script src="js/contacter_nous.js"></script>
-        <script src="https://kit.fontawesome.com/40440840ce.js" crossorigin="anonymous"></script>
+        
     </body>
 </html>

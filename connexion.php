@@ -62,15 +62,15 @@
             ?>-->
             <h1>Connexions</h1>
             
-            <form class="modal-content" method="POST" action="" id="connexion">
+            <form class="modal-content" method="POST" action="" id="connexion" autocomplete="off">
 
                 <label for="email"><b>Email</b></label>
-                <input class='text-field email-text-input' type="email" placeholder="Votre Email" name="email" value="<?php echo $email; ?>" >
+                <input class='text-field email-text-input' type="email" placeholder="Votre Email" name="email" value="<?php echo $email; ?>" autocomplete="false" >
 
                 <p class="email-erreur erreur"></p>
                 
                 <label for="password"><b>Mot de Passe</b></label>
-                <input class='text-field password-text-input' type="password" placeholder="votre mot de passe" name="password" value="<?php echo $_POST['password']; ?>" >
+                <input class='text-field password-text-input' type="password" placeholder="votre mot de passe" name="password" value="<?php echo $_POST['password']; ?>" autocomplete="false" >
 
                <p class="password-erreur erreur"></p>
 
@@ -85,6 +85,6 @@
        <!-- Le footer du page  -->
        <?php include_once('footer.php');?>
     <script src="js/connexion.js"></script>
-    <script src="https://kit.fontawesome.com/40440840ce.js" crossorigin="anonymous"></script>   
+       
 </body>
 </html>

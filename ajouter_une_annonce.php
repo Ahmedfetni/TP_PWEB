@@ -115,6 +115,6 @@
          <?php include_once('footer.php');?>
          
         <script src="js/ajouter_une_annonce.js"></script>
-        <script src="https://kit.fontawesome.com/40440840ce.js" crossorigin="anonymous"></script>   
+         
     </body>
     </html>

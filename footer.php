@@ -32,3 +32,4 @@
                 Copyright &copy; 2019 All rights reserved | This template is made with <span class="fa fa-heart"></span> by <a href="https://colorlib.com">Colorlib</a>
             </small>
         </footer>
+        <script src="https://kit.fontawesome.com/40440840ce.js" crossorigin="anonymous"></script>
