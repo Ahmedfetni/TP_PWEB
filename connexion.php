@@ -32,7 +32,7 @@
             } 
         
         }else{    
-            echo "<script>alert('the user email exist');</script>";
+            echo "<script>alert('the user email n\'exist pas');</script>";
         }    
     }
 
