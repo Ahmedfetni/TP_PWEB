@@ -92,17 +92,17 @@ body{
     color: var(--primary);
 }
 /*Le styling du header*/
-header{
-    flex-grow: 2;
-}
+
 /*La barre de recherche */
-.searchbar-container{
-   
+.header-container{
+    border-radius: 14px;
+    background-color: var(--secondary);
     margin-top: 20%;
+    margin-bottom: 20%;
     margin-left: 10%;
     margin-right: 10%;
     padding: 5%;
-    display: flex;
+    color: black;
     
 }
 

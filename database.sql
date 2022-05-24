@@ -1,11 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 5.0.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Nov 27, 2020 at 03:18 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -13,14 +6,7 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
---
--- Database: `login_register_pure_coding`
---
 
 -- --------------------------------------------------------
 
@@ -35,17 +21,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `users`
---
 
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
@@ -61,6 +37,41 @@ ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+--
+  --Table Des Messages
+--
+CREATE TABLE `feedback` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `body` mediumtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
+
+ALTER 'feedback' MODIFY 'id' int(11) NOT NULL , AUTO_INCREMENT=9;
+COMMIT;
+
+
+--
+-- Table des annonces
+--
+REATE TABLE `pubs` (
+  `id` int(11) NOT NULL,
+  `user_id` varchar(255) NOT NULL,
+  `titre` varchar(255) NOT NULL,
+  `corp` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `prix` varchar(255) NOT NULL,
+  'adresse' varchar(255) NOT NULL,
+  'wilaya' varchar(255) NOT NULL,
+  'nbr_piece' varchar(255) NOT NULL,
+  'numero_tlp' varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+ALTER TABLE `pubs`
+  ADD PRIMARY KEY (`id`);
+
+ALTER 'pubs' MODIFY 'id' int(11) NOT NULL , AUTO_INCREMENT=9;
+COMMIT
