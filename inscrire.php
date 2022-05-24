@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
 					VALUES ('$username', '$email', '$password')";
 			$result = mysqli_query($conn, $sql);
 			if ($result) {
-				echo "<script>alert('votre compte a été créé avec succès.')</script>";
+				header("Location: connexion.php");
 				$username = "";
 				$email = "";
 				$_POST['password'] = "";
